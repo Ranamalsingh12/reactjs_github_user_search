@@ -5,7 +5,7 @@ import './App.css';
 
 function App(){
 
-
+// variable declaration
   const [name , setName] = useState('');
   const [userName ,setUserName ] = useState('');
   const [followers, setFollowers] = useState('');
@@ -17,6 +17,7 @@ function App(){
   const [profile , setProfile] = useState('');
   
 
+  // effect hook
   useEffect(()=>{
     fetch(`https://api.github.com/users${userInput}`)
     .then(res => res.json())
@@ -44,6 +45,7 @@ function App(){
     window.location.href=`https://api.github.com/users/${profile}`;
   }
 
+  
   const handleSubmit = (e) => {
     e. preventDefault();
     fetch(`https://api.github.com/users/${userInput}`)
